@@ -1,11 +1,10 @@
 <?php
+namespace RomanNumber;
 
-require_once 'RomanNumberFormatter.php';
-
-class RomanNumberFormatterTest extends PHPUnit_Framework_TestCase {
+class FormatterTest extends PHPUnit_Framework_TestCase {
 
 	public function testCanConstruct() {
-		new RomanNumberFormatter();
+		new Formatter();
 		$this->assertTrue( true );
 	}
 
@@ -17,7 +16,7 @@ class RomanNumberFormatterTest extends PHPUnit_Framework_TestCase {
 	}
 
 	protected function assertInputResultsInExpected( $expected, $input ) {
-		$formatter = new RomanNumberFormatter();
+		$formatter = new Formatter();
 		$result = $formatter->formatNumber( $input );
 
 		$this->assertInternalType( 'string', $result );
@@ -137,7 +136,7 @@ class RomanNumberFormatterTest extends PHPUnit_Framework_TestCase {
 	 * @dataProvider toSmallNumberProvider
 	 */
 	public function testFormatToSmallNumber( $toSmallNumber ) {
-		$formatter = new RomanNumberFormatter();
+		$formatter = new Formatter();
 
 		$this->setExpectedException( 'OutOfRangeException' );
 		$formatter->formatNumber( $toSmallNumber );
@@ -213,7 +212,7 @@ class RomanNumberFormatterTest extends PHPUnit_Framework_TestCase {
 	 * @dataProvider upperBoundProvider
 	 */
 	public function testGetUpperBound( array $symbolMap, $expected ) {
-		$formatter = new RomanNumberFormatter( $symbolMap );
+		$formatter = new Formatter( $symbolMap );
 		$this->assertEquals( $expected, $formatter->getUpperBound() );
 	}
 

@@ -1,21 +1,21 @@
 {
-	"name": "oneblackbear/roman-numbers",
+	"name": "rossriley/roman-numbers",
 	"description": "Roman number formatter",
 	"keywords": ["roman number", "roman numeral", "roman"],
-	"homepage": "https://github.com/JeroenDeDauw/RomanNumbers",
 	"license": "GPL-2.0+",
 	"authors": [
 		 {
-			 "name": "Jeroen De Dauw",
-			 "email": "jeroendedauw@gmail.com",
-			 "homepage": "http://jeroendedauw.com",
-			 "role": "Developer"
+		 	"name": "Jeroen De Dauw","email": "jeroendedauw@gmail.com","homepage": "http://jeroendedauw.com",
+		 	"name": "Ross Riley","email": "riley.ross@gmail.com"
 		 }
 	],
 	"require": {
 		"php": ">=5.2.0"
 	},
 	"autoload": {
-  	"psr-0": { "": "./" }
+  	"psr-4": {
+  		"RomanNumber\\": 		"lib",
+  		"RomanNumber\\Tests\\": "tests"
+  	}
   }
 }
